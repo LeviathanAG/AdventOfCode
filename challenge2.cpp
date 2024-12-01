@@ -9,9 +9,10 @@ int main()
     int b[10000];
     int n;
 
-    n = 1000; // Read the number of lines expected
+    n=1000; // Read the number of lines expected
 
     ifstream f("input.txt");
+    
 
     string s;
     while (getline(f, s))
@@ -30,19 +31,31 @@ int main()
     }
     sort(a, a + n);
     sort(b, b + n);
-    for (int i = 0; i < n; i++)
+    int counter=0;
+    for(int i=0;i<n;i++)
     {
-        c[i] = abs(a[i] - b[i]);
+        counter=0;
+        for(int j=0;j<n;j++)
+        {
+            if(a[i]==b[j])
+            {
+                counter++;
+                
+            }
+            c[i]=a[i]*counter;
+        }
+        
     }
-    int sum = 0;
-    for (int i = 0; i < n; i++)
-    {
-        sum += c[i];
-    }
-    cout << sum << endl;
+    int sum=0;
+        for(int i=0; i<n; i++)
+        {
+            sum+=c[i];
+            
+        }
+        cout<<sum<<endl;
     f.close();
 
     return 0;
 }
 
-// Final Answer : 3714264
+// Final Answer : 18805872
