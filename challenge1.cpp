@@ -9,7 +9,7 @@ int main()
     int b[10000];
     int n;
 
-    n = 1000; //1000 lines given in input.txt
+    n = 1000; //1000 lines given
 
     ifstream f("input.txt");
 
