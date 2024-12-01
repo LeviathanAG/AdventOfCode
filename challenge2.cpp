@@ -18,13 +18,13 @@ int main()
     while (getline(f, s))
     {
 
-        // Locating space separating the two numbers
+        
         int spacePos = s.find(' ');
 
-        string s1 = s.substr(0, spacePos); // First number
-        string y = s.substr(spacePos + 1); // Second number
+        string s1 = s.substr(0, spacePos); 
+        string y = s.substr(spacePos + 1); 
 
-        // Convert strings to integers
+        
         a[mover] = stoi(s1);
         b[mover] = stoi(y);
         mover++;

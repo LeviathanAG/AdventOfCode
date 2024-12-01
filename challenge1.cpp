@@ -9,7 +9,7 @@ int main()
     int b[10000];
     int n;
 
-    n = 1000; // Read the number of lines expected
+    n = 1000; //1000 lines given in input.txt
 
     ifstream f("input.txt");
 
@@ -17,25 +17,25 @@ int main()
     while (getline(f, s))
     {
 
-        // Locating space separating the two numbers
+        //locating space separating the two numbers
         int spacePos = s.find(' ');
 
-        string s1 = s.substr(0, spacePos); // First number
-        string y = s.substr(spacePos + 1); // Second number
+        string s1 = s.substr(0, spacePos); //storing first number in the array cell
+        string y = s.substr(spacePos + 1); //second number
 
-        // Convert strings to integers
+        //converting str to int
         a[mover] = stoi(s1);
         b[mover] = stoi(y);
         mover++;
     }
     sort(a, a + n);
-    sort(b, b + n);
-    for (int i = 0; i < n; i++)
+    sort(b, b + n); //sorting the arrays
+    for (int i = 0; i < n; i++) //new array contains distance
     {
         c[i] = abs(a[i] - b[i]);
-    }
+    } 
     int sum = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) //taking sum of the array
     {
         sum += c[i];
     }
